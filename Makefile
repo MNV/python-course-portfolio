@@ -18,7 +18,7 @@ lint:
 
 # запуск автоматических тестов
 test:
-	docker compose run app ./manage.py test
+	docker compose run app python manage.py test
 
 # запуск всех функций поддержки качества кода
-all: format lint test
+all: format lint test docs-html

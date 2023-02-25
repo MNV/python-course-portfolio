@@ -16,7 +16,7 @@ class JobAdmin(admin.ModelAdmin):
         "updated_at",
     )
 
-    search_fields = ("description",)
+    search_fields = ("description", "content")
 
     list_filter = (
         "created_at",

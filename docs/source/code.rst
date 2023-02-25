@@ -5,3 +5,4 @@
     portfolio
     jobs
     blog
+    author
