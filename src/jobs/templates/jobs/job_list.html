@@ -36,7 +36,7 @@
                             <p class="card-text">{{ job.description }}</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a href="#" type="button" class="btn btn-sm btn-outline-secondary">Подробнее</a>
+                                    <a href="{% url 'job' 2 %}" type="button" class="btn btn-sm btn-outline-secondary">Подробнее</a>
                                 </div>
                                 <small class="text-muted"><p>{{ job.created_at|date:"d E Y" }}</p></small>
                             </div>

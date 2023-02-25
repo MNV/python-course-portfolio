@@ -22,12 +22,21 @@ from django.contrib import admin
 from django.urls import path, include
 
 from jobs.views import IndexJobsListView
+from author.views import AuthorListView
+
 from portfolio import settings
+
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("ckeditor/", include("ckeditor_uploader.urls")),
-    path("", IndexJobsListView.as_view(), name="home"),
+    path("", AuthorListView.as_view(), name="authors_content"),
+    path("", IndexJobsListView.as_view(), name="content"),
+    path("job/", include("jobs.urls")),
     path("blog/", include("blog.urls")),
+
+
+
 ]
 urlpatterns.extend(static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT))
