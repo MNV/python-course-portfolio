@@ -1,5 +1,3 @@
-from django.db import models
-
 # Create your models here.
 
 from django.db import models
@@ -11,6 +9,7 @@ class Author(TimeStampMixin):
     """
     Модель для хранения данных об авторе.
     """
+
     resume_url = models.URLField(
         verbose_name="Резюме",
         help_text="Ссылка на резюме автора",
@@ -24,7 +23,6 @@ class Author(TimeStampMixin):
         verbose_name="Почта",
         help_text="Почта автора",
     )
-
 
     class Meta:
         verbose_name = "Данные об авторе"

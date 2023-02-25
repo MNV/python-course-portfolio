@@ -27,7 +27,6 @@ from author.views import AuthorListView
 from portfolio import settings
 
 
-
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("ckeditor/", include("ckeditor_uploader.urls")),
@@ -35,8 +34,5 @@ urlpatterns = [
     path("", IndexJobsListView.as_view(), name="content"),
     path("job/", include("jobs.urls")),
     path("blog/", include("blog.urls")),
-
-
-
 ]
 urlpatterns.extend(static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT))
