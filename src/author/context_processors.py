@@ -6,4 +6,4 @@ def author(request: HttpRequest) -> dict:
     """
     Контекстный процессор для информации об авторе
     """
-    return {'author': Author.objects.last()}
+    return {"author": Author.objects.last()}

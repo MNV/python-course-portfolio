@@ -4,8 +4,8 @@
 
 from django.db import models
 
-from base.models import TimeStampMixin
 from ckeditor_uploader.fields import RichTextUploadingField
+from base.models import TimeStampMixin
 
 
 class Job(TimeStampMixin):
