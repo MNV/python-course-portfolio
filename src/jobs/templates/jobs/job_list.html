@@ -33,7 +33,8 @@
                                  alt="job image"/>
 
                         <div class="card-body">
-                            <p class="card-text">{{ job.description }}</p>
+                            <p class="card-text"><strong>{{ job.description }}</strong></p>
+                            <p class="card-text text-muted">{{ job.summary|safe }}</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
                                     <a href="{% url 'job' job.id %}" type="button"
