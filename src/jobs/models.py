@@ -2,6 +2,7 @@
 Модели для приложения "Jobs" (выполненные работы).
 """
 
+from ckeditor_uploader.fields import RichTextUploadingField
 from django.db import models
 
 from base.models import TimeStampMixin
@@ -23,9 +24,21 @@ class Job(TimeStampMixin):
         help_text="Краткое описание выполненной работы",
     )
 
+    detailed_description = RichTextUploadingField(
+        verbose_name="Подробное описание",
+        help_text="Подробное описание выполненной работы",
+    )
+
     class Meta:
         verbose_name = "Выполненная работа"
         verbose_name_plural = "Выполненные работы"
 
     def __str__(self) -> str:
         return f'Объект "Выполненная работа" (id={self.pk})'
+
+    def summary(self) -> str:
+        """
+         Краткое представление подробного описания работы.
+         :return:
+         """
+        return self.detailed_description[:100] + "..."
