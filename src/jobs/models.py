@@ -3,7 +3,7 @@
 """
 
 from django.db import models
-
+from ckeditor_uploader.fields import RichTextUploadingField
 from base.models import TimeStampMixin
 
 
@@ -21,6 +21,10 @@ class Job(TimeStampMixin):
         max_length=255,
         verbose_name="Описание",
         help_text="Краткое описание выполненной работы",
+    )
+    detailed_description = RichTextUploadingField(
+        verbose_name="Подробное описание",
+        help_text="Подробное описание выполненной работы",
     )
 
     class Meta:
