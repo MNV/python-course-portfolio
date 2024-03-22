@@ -33,3 +33,10 @@ class Job(TimeStampMixin):
 
     def __str__(self) -> str:
         return f'Объект "Выполненная работа" (id={self.pk})'
+
+    def summary(self) -> str:
+        """
+        Представление подробного описания работы.
+        :return:
+        """
+        return self.detailed_description[:50] + "..."
